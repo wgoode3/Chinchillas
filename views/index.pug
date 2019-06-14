@@ -1,0 +1,44 @@
+html
+  head
+    meta(charset="utf-8")
+    title Chinchillas
+    link(rel="stylesheet" href="style.css")
+  body
+    
+    .container
+
+      h1 Chinchillas
+
+      br
+
+      table(border=1)
+        tr  
+          th Name
+          th Color
+          th Age
+        each chinchilla in chinchillas
+          tr
+            td= chinchilla.name
+            td= chinchilla.color
+            td= chinchilla.age
+
+      br
+
+      form(action="/create" method="post")
+        .form-group
+          label Name:
+          input(type="text" name="name" placeholder="Name:")
+        .form-group
+          label Color:
+          select(name="color")
+            option Light Grey
+            option Beige
+            option Grey
+            option Violet
+            option Sapphire
+            option Dark Grey
+            option Ebony
+        .form-group
+          label Age:
+          input(type="number" name="age")
+        input(type="submit")
