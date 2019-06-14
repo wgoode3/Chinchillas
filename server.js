@@ -12,9 +12,18 @@ app.set('view engine', 'pug');
 mongoose.connect('mongodb://localhost/chinchillas');
 
 const ChinchillaSchema = new mongoose.Schema({
-    name: String,
-    color: String,
-    age: Number
+    name: {
+        type: String,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        required: true
+    }
 }, {timestamps: true});
 mongoose.model("Chinchilla", ChinchillaSchema);
 const Chinchilla = mongoose.model("Chinchilla");
