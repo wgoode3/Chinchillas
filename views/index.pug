@@ -16,11 +16,14 @@ html
           th Name
           th Color
           th Age
+          th Actions
         each chinchilla in chinchillas
           tr
             td= chinchilla.name
             td= chinchilla.color
             td= chinchilla.age
+            td
+              a(href="/edit/"+chinchilla._id) Edit
 
       br
 

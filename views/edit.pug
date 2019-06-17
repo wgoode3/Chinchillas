@@ -1,0 +1,31 @@
+html
+  head
+    meta(charset="utf-8")
+    title Chinchillas
+    link(rel="stylesheet" href="style.css")
+  body
+    
+    .container
+
+      h1 Update #{chinchilla.name}
+
+      br
+
+      - var colors = ["Light Grey", "Beige", "Grey", "Violet", "Sapphire", "Dark Grey", "Ebony"];
+
+      form(action="/update/"+chinchilla._id method="post")
+        .form-group
+          label Name:
+          input(type="text" name="name" placeholder="Name:" value=chinchilla.name)
+        .form-group
+          label Color:
+          select(name="color" default=chinchilla.color)
+            each color in colors
+              if chinchilla.color === color
+                option(selected="selected")= color
+              else
+                option= color
+        .form-group
+          label Age:
+          input(type="number" name="age" value=chinchilla.age)
+        input(type="submit")
